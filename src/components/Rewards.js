@@ -15,6 +15,7 @@ const LeftContent = (props) => {
     setUserTokens,
     userData,
     connectWallet,
+    walletType,
     userAddress,
     userClaimRewards,
     contractData,
@@ -236,22 +237,22 @@ const LeftContent = (props) => {
           </button>
 
           <button className="button button--v1 payout-info__button">
-            {userAddress ? (
-              <div
-                // disabled={userData.BNBremaining <= 0.000001 ? true : false}
-                onClick={MineTokens}
-              >
-                Mine Tokens
-              </div>
-            ) : (
-              <div
-                disabled={contractData.availableTokens.length <= 1 ? true : false}
-                onClick={connectWallet}
-              >
-                Connect Wallet
-              </div>
-            )}
-          </button>
+  {userAddress ? (
+    <div
+      // disabled={userData.BNBremaining <= 0.000001 ? true : false}
+      onClick={() => MineTokens(walletType, userAddress)}
+    >
+      Mine Tokens
+    </div>
+  ) : (
+    <div
+      disabled={contractData.availableTokens.length <= 1 ? true : false}
+      onClick={connectWallet}
+    >
+      Connect Wallet
+    </div>
+  )}
+</button>
           
 
           

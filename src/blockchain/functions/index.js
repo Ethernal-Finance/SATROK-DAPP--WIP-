@@ -200,13 +200,10 @@ export const claimRewards = async (walletType, userAddress) => {
 
 export const MineTokens = async (walletType, userAddress) => {
   try {
-    let contractInstance = await ContratInterface(walletType);
-
+    const contractInstance = await ContratInterface(walletType);
     const receipt = await contractInstance.methods
-      .MineTokens({from: userAddress });
-      
-      
-
+      .MineTokens()
+      .send({ from: userAddress });
     return receipt;
   } catch (error) {
     console.log(error);
