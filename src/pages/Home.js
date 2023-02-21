@@ -266,6 +266,17 @@ const Home = (props) => {
             "sections__item " + (view === 3 ? "active-tab" : "inactive-tab")
           }
         >
+          {/* <iframe src="https://play.satoshi-inu.club/">
+
+</iframe> */}
+        
+        </div>
+        <div
+          className={
+            "sections__item " + (view === 2 ? "active-tab" : "inactive-tab")
+          }
+        >
+          
           <Transfer
            connectWallet={connectWallet}
            userAddress={userAddress}
@@ -273,12 +284,6 @@ const Home = (props) => {
            tokens={tokens}
            balance={userData.userBalance}
          />
-        </div>
-        <div
-          className={
-            "sections__item " + (view === 2 ? "active-tab" : "inactive-tab")
-          }
-        >
           {/* <Exchangep
             connectWallet={connectWallet}
             userAddress={userAddress}
